@@ -2,5 +2,4 @@
 
 > Java21, SpringBoot3.31, SpringDataJPA, MySQL, Postman
 
-
 ### 구현 목표
