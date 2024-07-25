@@ -1,12 +1,15 @@
-package kr.co.qrbank.movieticketing.domain;
+package kr.co.qrbank.movieticketing.service.discount.condition.impl;
 
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 
 import org.hibernate.annotations.Comment;
 
+import kr.co.qrbank.movieticketing.domain.Screening;
+import kr.co.qrbank.movieticketing.service.discount.condition.inter.DiscountCondition;
+
 @Comment("기간 조건")
-public class PeriodCondition extends DiscountCondition{
+public class PeriodCondition extends DiscountCondition {
 	private DayOfWeek dayOfWeek;
 	private LocalTime startTIme;
 	private LocalTime endTime;

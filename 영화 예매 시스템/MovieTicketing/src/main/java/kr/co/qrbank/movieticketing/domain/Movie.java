@@ -7,8 +7,9 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
+import kr.co.qrbank.movieticketing.service.discount.policy.inter.DiscountPolicy;
 
 @Entity
 public class Movie {
@@ -21,7 +22,7 @@ public class Movie {
 	@OneToOne(fetch = FetchType.LAZY)
 	private Money fee;
 
-	@OneToOne
+	@OneToMany
 	private DiscountPolicy discountPolicy;
 
 	public Movie () {
@@ -39,6 +40,10 @@ public class Movie {
 	}
 
 	public Money calculateMovieFee(Screening screening) {
+		if(discountPolicy == null) {
+			return fee;
+		}
+
 		return fee.minus(discountPolicy.calculateDiscountAmount(screening));
 	}
 
