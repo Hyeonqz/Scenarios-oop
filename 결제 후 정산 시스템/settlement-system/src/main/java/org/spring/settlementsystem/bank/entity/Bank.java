@@ -1,4 +1,4 @@
-package org.spring.settlementsystem.entity;
+package org.spring.settlementsystem.bank.entity;
 
 import java.io.Serializable;
 
@@ -8,8 +8,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class MerchantSettlement implements Serializable {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Bank implements Serializable {
+
+	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 }
